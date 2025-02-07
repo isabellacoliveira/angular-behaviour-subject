@@ -21,7 +21,7 @@ export class ContaComponent {
   ) {}
 
   abrirConta() {
-    console.log('chamei galera');
+    console.log('chamei o abrir conta');
     this.showLoad = true;
   
     if (this.isContaPagamento) {
@@ -29,6 +29,7 @@ export class ContaComponent {
         if (value) {
           this.currentMessage = value;
           console.log('Valor atual do BehaviorSubject:', value);
+          console.log('chamei o contratar oferta (post)')
           this.contratarOferta();
           this.showLoad = false;
           this.showOpenAccount = true;
@@ -56,7 +57,7 @@ export class ContaComponent {
       )
       .subscribe(response => {
         if (response) {
-          console.log('Resposta recebida:', response);
+          console.log('Resposta recebida no post:', response);
         } else {
           console.log('Nenhuma resposta recebida.');
         }

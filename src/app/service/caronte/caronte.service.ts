@@ -14,20 +14,21 @@ export class CaronteService {
   constructor(private http: HttpClient) {}
 
   sendMessage(data: any) {
+    console.log('chamando o post na service do caronte')
     return this.http.post(this.apiUrl, data);
   }
 
   fetchMessage() {
-    console.log('fiz o get')
+    console.log('chamando o get na service do caronte')
     return this.http.get(this.apiUrl);
   }
 
   checkIfGetEnds(getEnd: boolean){
-    console.log('chamei')
+    console.log('chequei se o get terminou')
     this.messageSource.next(getEnd);
   }
 
   recieveGetStatus(checkChanges: any){
-    console.log('ive recieved get status', checkChanges)
+    console.log('recebi o status do get', checkChanges)
   }
 }

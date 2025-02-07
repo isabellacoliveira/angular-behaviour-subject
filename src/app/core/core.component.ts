@@ -21,7 +21,7 @@ export class CoreComponent {
   }
 
   buscarOferta() {
-    console.log('teste');
+    console.log('chamei o get do buscar oferta');
     this.caronteService.fetchMessage()
       .pipe(
         catchError(error => {
@@ -32,7 +32,7 @@ export class CoreComponent {
       .subscribe(response => {
         if (response) {
           setTimeout(() => {
-            console.log('estou emitindo')
+            console.log('finalizei o get')
             let checkChanges = this.caronteService.checkIfGetEnds(true);
             this.caronteService.recieveGetStatus(checkChanges)
           }, 5000)
