@@ -1,0 +1,16 @@
+<div *ngIf="!showOpenAccount">
+    <div *ngIf="!showLoad; else loading;">
+        <button (click)="abrirConta()">Abrir conta</button>
+    </div>
+    
+    <ng-template #loading>
+        <div class="loading-container">
+            <div class="spinner"></div>
+          </div>
+    </ng-template>
+</div>
+
+
+<div *ngIf="showOpenAccount">
+    Sua conta foi aberta! :) 
+</div>
